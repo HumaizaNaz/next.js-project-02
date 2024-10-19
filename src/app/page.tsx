@@ -1,101 +1,42 @@
 import Image from "next/image";
+import me from "../../public/me.png"; // Ensure this path is correct and the image exists
 
-export default function Home() {
+export default function Header() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="main-container bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 min-h-screen p-8 flex items-center justify-center">
+      <div className="parent-container bg-white shadow-2xl rounded-lg overflow-hidden flex flex-col md:flex-row items-center md:items-start justify-between p-8 space-y-8 md:space-y-0 md:space-x-12">
+       
+        <div className="child-container md:w-1/2">
+          <h1 className="text-5xl font-extrabold text-gray-800 mb-4">Hey,</h1>
+          <h2 className="text-3xl font-semibold text-gray-700 mb-4">
+            My Name is <span className="text-blue-600">Humaiza Naz</span>
+          </h2>
+          <h3 className="text-xl font-medium text-gray-600 mb-6">I am a Next.js Developer</h3>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="intro bg-gray-50 p-6 shadow-lg rounded-lg">
+            <p className="text-gray-700 leading-relaxed">
+              Hello! I am Humaiza Naz, a passionate Next.js developer with a knack for creating dynamic, high-performance web applications. 
+              With a strong foundation in JavaScript and React, I specialize in building scalable, user-friendly interfaces that enhance 
+              user experiences. I love leveraging Next.js&apos; powerful features like server-side rendering and static site generation to 
+              optimize performance and SEO. <br /><br />
+              With 2 years of experience in web development, I have successfully delivered projects across various domains, collaborating 
+              closely with designers and stakeholders to bring ideas to life. Whether it&apos;s crafting responsive layouts or implementing 
+              complex functionalities, I thrive on solving challenges and staying up-to-date with the latest trends in the JavaScript ecosystem.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* Image */}
+        <div className="image md:w-1/2 flex justify-center">
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={me} // Image in public folder
+            alt="Humaiza Naz"
+            width={400}
+            height={400}
+            className="rounded-full border-4 border-blue-500 shadow-xl transition-transform transform hover:scale-105"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
     </div>
   );
 }
